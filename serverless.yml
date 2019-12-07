@@ -104,6 +104,22 @@ functions:
           method: post
           cors: true
 
+  add-comment:
+    handler: add-comment.main
+    events:
+      - http:
+          path: comments
+          method: post
+          cors: true
+
+  get-comments-by-post:
+    handler: get-comments-by-post.main
+    events:
+      - http:
+          path: comments/{postid}
+          method: get
+          cors: true
+
   add-job-post:
     handler: add-job-post.main
     events:
