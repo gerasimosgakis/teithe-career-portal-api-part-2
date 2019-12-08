@@ -136,6 +136,22 @@ functions:
           method: get
           cors: true
 
+  get-job-posts-by-userid:
+    handler: get-job-posts-by-userid.main
+    events:
+      - http:
+          path: job-posts/{userid}
+          method: get
+          cors: true
+
+  update-internal-job:
+    handler: update-internal-job.main
+    events:
+      - http:
+          path: job-posts/update/{jobid}
+          method: put
+          cors: true
+
   delete-post:
     handler: delete-post.main
     events:
