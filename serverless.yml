@@ -96,6 +96,14 @@ functions:
           method: get
           cors: true
 
+  delete-post:
+    handler: delete-post.main
+    events:
+      - http:
+          path: posts/{id}
+          method: delete
+          cors: true
+
   add-like:
     handler: add-like.main
     events:
@@ -110,6 +118,14 @@ functions:
       - http:
           path: comments
           method: post
+          cors: true
+
+  delete-comment:
+    handler: delete-comment.main
+    events:
+      - http:
+          path: comments/delete/{id}
+          method: delete
           cors: true
 
   get-comments-by-post:
@@ -152,11 +168,11 @@ functions:
           method: put
           cors: true
 
-  delete-post:
-    handler: delete-post.main
+  delete-job-post:
+    handler: delete-job-post.main
     events:
       - http:
-          path: posts/{id}
+          path: job-posts/delete/{id}
           method: delete
           cors: true
 
