@@ -168,6 +168,14 @@ functions:
           method: put
           cors: true
 
+  search-job-posts:
+    handler: search-job-posts.main
+    events:
+      - http:
+          path: job-posts/search
+          method: post
+          cors: true
+
   delete-job-post:
     handler: delete-job-post.main
     events:
