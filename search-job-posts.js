@@ -101,20 +101,43 @@ module.exports.main = async (event, context, callback) => {
     part_time
   } = data;
 
+  console.log({
+    title: title ? `%${title}%` : "%",
+    location: location ? `%${location}%` : "%",
+    min_salary: min_salary ? min_salary : null,
+    max_salary: max_salary ? max_salary : null,
+    type: permanent ? "permanent" : null,
+    type: temp ? "temp" : null,
+    type: contract ? "contract" : null,
+    type: full_time ? "full_time" : null,
+    type: part_time ? "part_time" : null
+  });
+
   const sql = `
     SELECT *
     FROM internal_jobs
     WHERE LOWER(title) LIKE $1
     AND LOWER(location) LIKE $2
-    AND min_salary > $3 OR $3 IS NULL
-    AND max_salary < $4 OR $4 IS NULL
-    AND (type = $5
-    OR type = $6
-    OR type = $7
-    OR type = $8
-    OR type = $9)
+    AND (min_salary <= $3 OR $3 IS NULL)
+    AND (max_salary >= $4 OR $4 IS NULL)
+    AND (type = $5 OR $5 IS NULL)
     ORDER BY created_at DESC
   `;
+
+  let type;
+  if (permanent) {
+    type = "permanent";
+  } else if (temp) {
+    type = "temp";
+  } else if (contract) {
+    type = "comtract";
+  } else if (full_time) {
+    type = "full_time";
+  } else if (part_time) {
+    type = "part_time";
+  } else {
+    type = null;
+  }
 
   try {
     const queryResult = await db.query(
@@ -123,11 +146,7 @@ module.exports.main = async (event, context, callback) => {
       location ? `%${location}%` : "%",
       min_salary ? min_salary : null,
       max_salary ? max_salary : null,
-      permanent ? "permanent" : null,
-      temp ? "temp" : null,
-      contract ? "contract" : null,
-      full_time ? "full_time" : null,
-      part_time ? "part_time" : null
+      type
     );
     return {
       statusCode: 200,
