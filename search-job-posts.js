@@ -89,26 +89,46 @@ module.exports.main = async (event, context, callback) => {
 
   const data = JSON.parse(event.body);
 
-  console.log(data);
-
-  const { title, location } = data;
+  const {
+    title,
+    location,
+    min_salary,
+    max_salary,
+    permanent,
+    temp,
+    contract,
+    full_time,
+    part_time
+  } = data;
 
   const sql = `
     SELECT *
     FROM internal_jobs
     WHERE LOWER(title) LIKE $1
     AND LOWER(location) LIKE $2
+    AND min_salary > $3 OR $3 IS NULL
+    AND max_salary < $4 OR $4 IS NULL
+    AND (type = $5
+    OR type = $6
+    OR type = $7
+    OR type = $8
+    OR type = $9)
     ORDER BY created_at DESC
   `;
 
   try {
-    console.log(title, location);
     const queryResult = await db.query(
       sql,
       title ? `%${title}%` : "%",
-      location ? `%${location}%` : "%"
+      location ? `%${location}%` : "%",
+      min_salary ? min_salary : null,
+      max_salary ? max_salary : null,
+      permanent ? "permanent" : null,
+      temp ? "temp" : null,
+      contract ? "contract" : null,
+      full_time ? "full_time" : null,
+      part_time ? "part_time" : null
     );
-    console.log(queryResult);
     return {
       statusCode: 200,
       headers,
@@ -118,6 +138,10 @@ module.exports.main = async (event, context, callback) => {
       })
     };
   } catch (error) {
-    console.log(error);
+    return {
+      statusCode: error.statusCode || 500,
+      headers,
+      body: "ERROR: Could not search for jobs: " + error
+    };
   }
 };
