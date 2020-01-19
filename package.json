@@ -1,5 +1,5 @@
 {
-  "name": "teithe-career-portal-posts-api",
+  "name": "teithe-career-portal-api-part-2",
   "version": "1.1.0",
   "description": "A Node.js starter for the Serverless Framework with async/await and unit test support",
   "main": "handler.js",

@@ -11,7 +11,7 @@
 #
 # Happy Coding!
 
-service: teithe-career-portal-posts-api
+service: teithe-career-portal-api-part-2
 app: teithe-career-portal-api
 org: gerasimosgakis
 
