@@ -109,6 +109,7 @@ These are all the currently available services
 - **Get Job Posts By User ID** - *method*: GET, *path*: /job-posts/{userid}
 - **Update Internal Job** - *method*: POST, *path*: /job-posts/update/{jobid}, *body*: data object
 - **Search Jobs** - *method*: POST, *path*: /job-posts/search, *body*: parameters object (title, location, min_salary, max_salary, permanent, temp, contract, full_time, part_time)
+- **Delete Job Post** - *method*: DELETE, *path*: /job-posts/delete/{id}
 
 **Note**: the `serverless install` command will only work on V1.0 or later.
 ---
