@@ -3,7 +3,7 @@
 > This is the second part of the serverless backend
 
 - This is the second part of the backend for the Career Portal Application. An app, which allows graduates of an institution
-to connect, create a profile with all their credentials and information, communicate with each other and find their dream job.
+  to connect, create a profile with all their credentials and information, communicate with each other and find their dream job.
 
 ---
 
@@ -12,23 +12,20 @@ to connect, create a profile with all their credentials and information, communi
 > If your `README` has a lot of info, section headers might be nice.
 
 - [Installation](#installation)
-- [Features](#features)
+- [Use Services](#services)
+- [Functions](#functions)
 - [Contributing](#contributing)
-- [Team](#team)
-- [FAQ](#faq)
-- [Support](#support)
 - [License](#license)
-
 
 ---
 
 ## Installation
 
-```npm i -g serverless```
+`npm i -g serverless`
 
 ### Clone
 
-```git clone https://github.com/gerasimosgakis/teithe-career-portal-api-part-2.git```
+`git clone https://github.com/gerasimosgakis/teithe-career-portal-api-part-2.git`
 
 ### Setup
 
@@ -38,8 +35,11 @@ cd teithe-career-portal-api-part-2
 # Install packages
 npm install
 ```
-### Use Services
+
+## <a name="services></a>Use Services
+
 1. **Run all the services offline**
+
 ```bash
 # Run serverless offline
 serverless offline
@@ -93,26 +93,25 @@ Removes all Functions, Events and Resources from your AWS account.
 serverless remove
 ```
 
-### Functions
+## Functions
 
 These are all the currently available services
 
-- **Add Post** - *method*: POST, *path*: /posts, *body*: data object
-- **Delete Post** - *method*: DELETE, *path*: /posts/{id}
-- **List Posts** - *method*: GET, *path*: /posts
-- **Add/Remove Like** - *method*: POST, *path*: /likes, *body*: data object (user_id, post_id)
-- **Add Comment** - *method*: POST, *path*: /comments, *body*: data object
-- **Delete Comment** - *method*: DELETE, *path*: /comments/delete{id}
-- **Get Comments By Post** - *method*: GET, *path*: /comments/{postid}
-- **Add Internal Job Post** - *method*: POST, *path*: /job-posts, *body*: data object
-- **List Job Posts** - *method*: GET, *path*: /job-posts
-- **Get Job Posts By User ID** - *method*: GET, *path*: /job-posts/{userid}
-- **Update Internal Job** - *method*: POST, *path*: /job-posts/update/{jobid}, *body*: data object
-- **Search Jobs** - *method*: POST, *path*: /job-posts/search, *body*: parameters object (title, location, min_salary, max_salary, permanent, temp, contract, full_time, part_time)
-- **Delete Job Post** - *method*: DELETE, *path*: /job-posts/delete/{id}
+- **Add Post** - _method_: POST, _path_: /posts, _body_: data object
+- **Delete Post** - _method_: DELETE, _path_: /posts/{id}
+- **List Posts** - _method_: GET, _path_: /posts
+- **Add/Remove Like** - _method_: POST, _path_: /likes, _body_: data object (user_id, post_id)
+- **Add Comment** - _method_: POST, _path_: /comments, _body_: data object
+- **Delete Comment** - _method_: DELETE, _path_: /comments/delete{id}
+- **Get Comments By Post** - _method_: GET, _path_: /comments/{postid}
+- **Add Internal Job Post** - _method_: POST, _path_: /job-posts, _body_: data object
+- **List Job Posts** - _method_: GET, _path_: /job-posts
+- **Get Job Posts By User ID** - _method_: GET, _path_: /job-posts/{userid}
+- **Update Internal Job** - _method_: POST, _path_: /job-posts/update/{jobid}, _body_: data object
+- **Search Jobs** - _method_: POST, _path_: /job-posts/search, _body_: parameters object (title, location, min_salary, max_salary, permanent, temp, contract, full_time, part_time)
+- **Delete Job Post** - _method_: DELETE, _path_: /job-posts/delete/{id}
 
-**Note**: the `serverless install` command will only work on V1.0 or later.
----
+## **Note**: the `serverless install` command will only work on V1.0 or later.
 
 ## Contributing
 
@@ -121,10 +120,11 @@ These are all the currently available services
 ### Step 1
 
 - **Option 1**
-    - 🍴 Fork this repo!
+
+  - 🍴 Fork this repo!
 
 - **Option 2**
-    - 👯 Clone this repo to your local machine using `https://github.com/joanaz/HireDot2.git`
+  - 👯 Clone this repo to your local machine using `https://github.com/gerasimosgakis/teithe-career-portal-api-part-2.git`
 
 ### Step 2
 
@@ -132,7 +132,8 @@ These are all the currently available services
 
 ### Step 3
 
-- 🔃 Create a new pull request using <a href="https://github.com/joanaz/HireDot2/compare/" target="_blank">`https://github.com/joanaz/HireDot2/compare/`</a>.
+- 🔃 Create a new pull request using <a href="https://github.com/gerasimosgakis/teithe-career-portal-api-part-2/compare" target="_blank">`https://github.com/gerasimosgakis/teithe-career-portal-api-part-2/compare`</a>.
+
 ---
 
 ## License
