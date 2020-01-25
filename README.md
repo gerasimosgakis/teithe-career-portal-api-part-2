@@ -111,8 +111,6 @@ These are all the currently available services
 - **Search Jobs** - _method_: POST, _path_: /job-posts/search, _body_: parameters object (title, location, min_salary, max_salary, permanent, temp, contract, full_time, part_time)
 - **Delete Job Post** - _method_: DELETE, _path_: /job-posts/delete/{id}
 
-## **Note**: the `serverless install` command will only work on V1.0 or later.
-
 ## Contributing
 
 > To get started...
