@@ -23,8 +23,8 @@ module.exports.main = async (event, context, callback) => {
   const sql = `
     SELECT *
     FROM internal_jobs
-    WHERE LOWER(title) LIKE $1
-    AND LOWER(location) LIKE $2
+    WHERE (LOWER(title) LIKE $1 OR $1 IS NULL)
+    AND (LOWER(location) LIKE $2 OR $2 IS NULL)
     AND (min_salary <= $3 OR $3 IS NULL)
     AND (max_salary >= $4 OR $4 IS NULL)
     AND (type = $5 OR $5 IS NULL)
