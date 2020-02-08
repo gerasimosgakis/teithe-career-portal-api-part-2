@@ -49,8 +49,8 @@ module.exports.main = async (event, context, callback) => {
   try {
     const queryResult = await db.query(
       sql,
-      title ? `%${title}%` : "%",
-      location ? `%${location}%` : "%",
+      title ? `%${title.toLowerCase()}%` : "%",
+      location ? `%${location.toLowerCase()}%` : "%",
       min_salary ? min_salary : null,
       max_salary ? max_salary : null,
       type
