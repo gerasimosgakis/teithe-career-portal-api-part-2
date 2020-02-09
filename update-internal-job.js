@@ -6,7 +6,6 @@ module.exports.main = async (event, context, callback) => {
     "Access-Control-Allow-Credentials": true
   };
   const data = JSON.parse(event.body);
-  console.log(data, event.pathParameters.jobid);
   try {
     const result = await db.updateById(
       "internal_jobs",

@@ -16,7 +16,6 @@ module.exports.main = async (event, context, callback) => {
 
   try {
     const queryResult = await db.query(sql, event.pathParameters.postid);
-    console.log(queryResult);
     return {
       statusCode: 200,
       headers,
